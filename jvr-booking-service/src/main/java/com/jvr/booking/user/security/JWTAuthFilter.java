@@ -37,6 +37,14 @@ public class JWTAuthFilter extends OncePerRequestFilter {
 		final String jwtToken;
 		final String userEmail;
 		
+		String path = request.getRequestURI();
+
+	    // ✅ Bypass JWT for car registration
+	    if (path.equals("/api/car-details")) {
+	        filterChain.doFilter(request, response);
+	        return;
+	    }
+		
 		if(authHeader == null || authHeader.isBlank()) {
 			filterChain.doFilter(request, response);
 			return;
