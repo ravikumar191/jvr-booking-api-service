@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -33,11 +34,17 @@ public class SecurityConfig {
 	private JWTAuthFilter jwtAuthFilter;
 	
 	@Bean
+    public WebSecurityCustomizer webSecurityCustomizer() {
+        return (web) -> web.ignoring()
+                .requestMatchers("/uploads/**");
+    }
+	
+	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity.csrf(AbstractHttpConfigurer::disable)
 		           .cors(Customizer.withDefaults())
 		           .authorizeHttpRequests(request->request
-		             .requestMatchers("/auth/**","/bookings/**").permitAll()
+		             .requestMatchers("/api/**","/auth/**","/api/car-details/**","/bookings/**","api/singer-details/**").permitAll()
 		             .anyRequest().authenticated())
 		           .sessionManagement(manager ->manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 		           .authenticationProvider(authenticationProvider())

@@ -112,6 +112,12 @@
             <artifactId>aws-java-sdk-s3</artifactId>
             <version>1.12.791</version>
         </dependency>
+        <!-- File Upload -->
+        <dependency>
+          <groupId>commons-fileupload</groupId>
+          <artifactId>commons-fileupload</artifactId>
+          <version>1.5</version>
+        </dependency>
 	</dependencies>
 	<build>
 		<plugins>
