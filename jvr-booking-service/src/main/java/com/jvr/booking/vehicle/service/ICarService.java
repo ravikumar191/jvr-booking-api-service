@@ -1,4 +1,4 @@
-package com.jvr.booking.booking.car.service;
+package com.jvr.booking.vehicle.service;
 
 import java.time.LocalDate;
 import java.util.List;

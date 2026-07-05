@@ -1,4 +1,4 @@
-package com.jvr.booking.booking.car.dto;
+package com.jvr.booking.vehicle.dto;
 
 import org.springframework.web.multipart.MultipartFile;
 

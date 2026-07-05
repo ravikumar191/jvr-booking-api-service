@@ -1,8 +1,8 @@
-package com.jvr.booking.booking.car.repo;
+package com.jvr.booking.vehicle.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.jvr.booking.booking.car.model.Vehicle;
+import com.jvr.booking.vehicle.model.Vehicle;
 
 public interface VehicleRepository extends JpaRepository<Vehicle, Long> {
 	

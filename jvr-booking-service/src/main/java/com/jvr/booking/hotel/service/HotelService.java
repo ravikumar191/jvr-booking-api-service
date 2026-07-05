@@ -1,4 +1,5 @@
-package com.jvr.booking.booking.singer.service;
+package com.jvr.booking.hotel.service;
+
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -9,17 +10,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.jvr.booking.booking.singer.dto.SingerRequest;
-import com.jvr.booking.booking.singer.model.Singer;
-import com.jvr.booking.booking.singer.repo.SingerRepository;
+import com.jvr.booking.hotel.dto.HotelRequest;
+import com.jvr.booking.hotel.model.Hotel;
+import com.jvr.booking.hotel.repo.HotelRepository;
 
 import jakarta.transaction.Transactional;
 
+
 @Service
-public class SingerService {
+public class HotelService {
 	
 	 @Autowired	
-	 private  SingerRepository singerRepository;
+	 private  HotelRepository hotelRepository;
 
 	 //private final String UPLOAD_DIR = "uploads/";
      private static final String UPLOAD_DIR = "D:/jvr-uploads/";
@@ -27,26 +29,30 @@ public class SingerService {
 
 
 	    @Transactional
-	    public Singer saveSingerDetails(SingerRequest singerRequest) throws IOException {
+	    public Hotel saveHotelDetails(HotelRequest hotelRequest) throws IOException {
 
-	        Singer singer = new Singer();
+	        Hotel hotel = new Hotel();
 
-	        singer.setSingerName(singerRequest.getSingerName());
-	        singer.setBookingArea(singerRequest.getBookingArea());
-	        singer.setMobile(singerRequest.getMobile());
-	        singer.setEmail(singerRequest.getEmail());
-	        singer.setTypeOfSinger(singerRequest.getTypeOfSinger());
-	        singer.setManagerName(singerRequest.getManagerName());
-	        singer.setManagerMobileNumber(singerRequest.getManagerMobileNumber());
-	        singer.setFunctionType(singerRequest.getFunctionType());
-	        singer.setApproximatePrice(singerRequest.getApproximatePrice());
-	        singer.setCommissionAccepted(singerRequest.getCommissionAccepted());
+	        hotel.setHotelName(hotelRequest.getHotelName());
+	        hotel.setHotelOwnerName(hotelRequest.getHotelOwnerName ());
+	        hotel.setMobile(hotelRequest.getMobile());
+	        hotel.setEmail(hotelRequest.getEmail());
+	        hotel.setAddress(hotelRequest.getAddress());
+	        hotel.setPinCode(hotelRequest.getPinCode());
+	        hotel.setDistrict(hotelRequest.getDistrict());
+	        hotel.setState(hotelRequest.getState());
+	        hotel.setFacilitiesProvided(hotelRequest.getFacilitiesProvided());
+	        hotel.setFunctionType(hotelRequest.getFunctionType());
+	        hotel.setManagerName(hotelRequest.getManagerName());
+	        hotel.setManagerMobileNumber(hotelRequest.getManagerMobileNumber());
+	        hotel.setApproximatePrice(hotelRequest.getApproximatePrice());
+	        hotel.setCommissionAccepted(hotelRequest.getCommissionAccepted());
 
 	        // Save files
-	        singer.setSingerPhoto(saveFile(singerRequest.getSingerPhoto()));
+	        hotel.setHotelPhoto(saveFile(hotelRequest.getHotelPhoto()));
 	        
 
-	        return singerRepository.save(singer);
+	        return hotelRepository.save(hotel);
 	    }
 	    
 	    private String saveFile(MultipartFile file) throws IOException {
@@ -83,8 +89,8 @@ public class SingerService {
 	        return filePath;
 	    }*/
 	    
-		public List<Singer> getAllSingers() {
-	        return singerRepository.findAll();
+		public List<Hotel> getAllHotels() {
+	        return hotelRepository.findAll();
 		}
 
 }

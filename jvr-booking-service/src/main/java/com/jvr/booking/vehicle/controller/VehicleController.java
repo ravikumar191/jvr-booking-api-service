@@ -1,4 +1,4 @@
-package com.jvr.booking.booking.car.controller;
+package com.jvr.booking.vehicle.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jvr.booking.booking.car.dto.VehicleRequest;
-import com.jvr.booking.booking.car.model.Vehicle;
-import com.jvr.booking.booking.car.service.VehicleService;
+import com.jvr.booking.vehicle.dto.VehicleRequest;
+import com.jvr.booking.vehicle.model.Vehicle;
+import com.jvr.booking.vehicle.service.VehicleService;
 
 @RestController
 @RequestMapping("/api/car-details")

@@ -1,4 +1,4 @@
-package com.jvr.booking.booking.singer.model;
+package com.jvr.booking.singer.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

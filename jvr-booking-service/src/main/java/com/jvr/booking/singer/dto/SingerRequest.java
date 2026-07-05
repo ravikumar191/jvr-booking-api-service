@@ -1,4 +1,4 @@
-package com.jvr.booking.booking.singer.dto;
+package com.jvr.booking.singer.dto;
 
 import org.springframework.web.multipart.MultipartFile;
 

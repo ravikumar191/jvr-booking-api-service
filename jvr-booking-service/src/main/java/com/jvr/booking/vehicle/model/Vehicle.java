@@ -1,4 +1,4 @@
-package com.jvr.booking.booking.car.model;
+package com.jvr.booking.vehicle.model;
 
 
 import jakarta.persistence.Column;

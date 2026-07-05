@@ -1,4 +1,4 @@
-package com.jvr.booking.booking.car.service;
+package com.jvr.booking.vehicle.service;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -10,9 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.jvr.booking.booking.car.dto.VehicleRequest;
-import com.jvr.booking.booking.car.model.Vehicle;
-import com.jvr.booking.booking.car.repo.VehicleRepository;
+import com.jvr.booking.vehicle.dto.VehicleRequest;
+import com.jvr.booking.vehicle.model.Vehicle;
+import com.jvr.booking.vehicle.repo.VehicleRepository;
 
 import jakarta.transaction.Transactional;
 
