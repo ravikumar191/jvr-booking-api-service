@@ -1,4 +1,4 @@
-package com.jvr.booking.pandit_ji.controller;
+package com.jvr.booking.catering.contoller;
 
 import java.io.IOException;
 import java.util.List;
@@ -12,16 +12,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jvr.booking.pandit_ji.dto.PanditJiRequest;
-import com.jvr.booking.pandit_ji.model.PanditJi;
-import com.jvr.booking.pandit_ji.service.PanditJiService;
+import com.jvr.booking.catering.dto.CateringRequest;
+import com.jvr.booking.catering.model.Catering;
+import com.jvr.booking.catering.service.CateringService;
 
 @RestController
-@RequestMapping("/api/pandit-ji-details")
-public class PanditJiController {
+@RequestMapping("/api/catering-details")
+public class CateringController {
 	
 		@Autowired
-		private PanditJiService panditJiService;
+		private CateringService cateringService;
 
 		/*
 		 * @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE) public
@@ -31,18 +31,18 @@ public class PanditJiController {
 		 */
 
 		@PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-		public ResponseEntity<?> registerPanditJi(@ModelAttribute PanditJiRequest request) {
+		public ResponseEntity<?> registerCatering(@ModelAttribute CateringRequest request) {
 			try {
-				return ResponseEntity.ok(panditJiService.savePanditJIDetails(request));
+				return ResponseEntity.ok(cateringService.saveCateringDetails(request));
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				return ResponseEntity.badRequest().body(e.getMessage());
 			}
 		}
 
-		@GetMapping("/all-available-panditji")
-		public List<PanditJi> getAllPanditJi() {
-			return panditJiService.getAllPanditJi();
+		@GetMapping("/all-available-catering")
+		public List<Catering> getAllCaterings() {
+			return cateringService.getAllCaterings();
 		}
 }
 

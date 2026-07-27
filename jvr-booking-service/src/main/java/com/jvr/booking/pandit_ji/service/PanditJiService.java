@@ -27,7 +27,7 @@ public class PanditJiService {
 
 
 	    @Transactional
-	    public PanditJi saveDecorationDetails(PanditJiRequest panditJiRequest) throws IOException {
+	    public PanditJi savePanditJIDetails(PanditJiRequest panditJiRequest) throws IOException {
 
 	    	PanditJi panditJi = new PanditJi();
 
