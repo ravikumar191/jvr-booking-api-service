@@ -40,11 +40,11 @@ public class BandBaajService {
 	    	bandBaaja.setPinCode(bandBaajaRequest.getPinCode());
 	    	bandBaaja.setDistrict(bandBaajaRequest.getDistrict());
 	    	bandBaaja.setState(bandBaajaRequest.getState());
-	    	bandBaaja.setServices(bandBaajaRequest.getExperience());
-	    	bandBaaja.setServices(bandBaajaRequest.getTotalMembers());
+	    	bandBaaja.setExperience(bandBaajaRequest.getExperience());
+	    	bandBaaja.setTotalMembers(bandBaajaRequest.getTotalMembers());
 	    	bandBaaja.setBandType(bandBaajaRequest.getBandType());
 	    	bandBaaja.setServices(bandBaajaRequest.getServices());
-	    	bandBaaja.setServices(bandBaajaRequest.getAreaRange());
+	    	bandBaaja.setAreaRange(bandBaajaRequest.getAreaRange());
 
 	    	bandBaaja.setApproximatePrice(bandBaajaRequest.getApproximatePrice());
 	    	bandBaaja.setCommissionAccepted(bandBaajaRequest.getCommissionAccepted());
