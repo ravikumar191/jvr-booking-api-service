@@ -1,19 +1,31 @@
-package com.jvr.booking.singer.dto;
+package com.jvr.booking.standUpComedian.model;
 
-import org.springframework.web.multipart.MultipartFile;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 
-public class SingerRequest {
-	
-	    private String singerName;
+@Entity
+@Table(name = "standUpComedian_details")
+public class StandUpComedian {
+
+	   @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private Long comedianId;
+
+	    private String comedianName;
 
 	    private String bookingArea;
 
 	    private String mobile;
 	    private String email;
 	    
-	    private String typeOfSinger;
-
+	    private String comedyLanguage;
+	    
+	    private String comedyType;
+	    
 	    private String managerName;
 	    
 	    private String managerMobileNumber;
@@ -24,14 +36,22 @@ public class SingerRequest {
 	    private Boolean commissionAccepted;
 
 	    // File paths
-	    private MultipartFile singerPhoto;
+	    private String comedianPhoto;
 
-		public String getSingerName() {
-			return singerName;
+		public Long getComedianId() {
+			return comedianId;
 		}
 
-		public void setSingerName(String singerName) {
-			this.singerName = singerName;
+		public void setComedianId(Long comedianId) {
+			this.comedianId = comedianId;
+		}
+
+		public String getComedianName() {
+			return comedianName;
+		}
+
+		public void setComedianName(String comedianName) {
+			this.comedianName = comedianName;
 		}
 
 		public String getBookingArea() {
@@ -58,14 +78,22 @@ public class SingerRequest {
 			this.email = email;
 		}
 
-		public String getTypeOfSinger() {
-			return typeOfSinger;
+		public String getComedyLanguage() {
+			return comedyLanguage;
 		}
 
-		public void setTypeOfSinger(String typeOfSinger) {
-			this.typeOfSinger = typeOfSinger;
+		public void setComedyLanguage(String comedyLanguage) {
+			this.comedyLanguage = comedyLanguage;
 		}
-		
+
+		public String getComedyType() {
+			return comedyType;
+		}
+
+		public void setComedyType(String comedyType) {
+			this.comedyType = comedyType;
+		}
+
 		public String getManagerName() {
 			return managerName;
 		}
@@ -106,12 +134,12 @@ public class SingerRequest {
 			this.commissionAccepted = commissionAccepted;
 		}
 
-		public MultipartFile getSingerPhoto() {
-			return singerPhoto;
+		public String getComedianPhoto() {
+			return comedianPhoto;
 		}
 
-		public void setSingerPhoto(MultipartFile singerPhoto) {
-			this.singerPhoto = singerPhoto;
+		public void setComedianPhoto(String comedianPhoto) {
+			this.comedianPhoto = comedianPhoto;
 		}
-
+	    
 }
